@@ -1,4 +1,7 @@
-# Kue
+# KueJOB base in Kue
+```
+update BLPOP TO LPOP
+```
 
 [![Build Status](https://travis-ci.org/Automattic/kue.svg?branch=master&style=flat)](https://travis-ci.org/Automattic/kue)
 [![npm version](https://badge.fury.io/js/kue.svg?style=flat)](http://badge.fury.io/js/kue)
