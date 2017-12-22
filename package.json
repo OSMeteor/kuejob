@@ -1,6 +1,6 @@
 {
   "name": "kuejob",
-  "version": "0.11.10",
+  "version": "0.11.11",
   "description": "meteor kuejob",
   "main": "index.js",
   "scripts": {
@@ -30,19 +30,18 @@
   "bugs": {
     "url": "https://github.com/OSMeteor/kuejob/issues"
   },
-  "homepage": "https://github.com/OSMeteor/kuejob"
-  ,
-   "bin": {
+  "homepage": "https://github.com/OSMeteor/kuejob",
+  "bin": {
     "kue-dashboard": "bin/kue-dashboard"
   },
   "dependencies": {
     "body-parser": "^1.12.2",
     "express": "^4.12.2",
+    "ioredis": "^3.2.2",
     "lodash": "^4.0.0",
     "nib": "~1.1.2",
     "node-redis-warlock": "~0.2.0",
     "pug": "^2.0.0-beta3",
-    "redis": "~2.6.0-2",
     "stylus": "~0.54.5",
     "yargs": "^4.0.0"
   },
