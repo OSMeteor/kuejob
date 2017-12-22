@@ -13,60 +13,32 @@ var jobs = kue.createQueue({
     //     db: 12
     // }
     // redis:{
-    //     port: 19000,
+    //     port: 7379,
     //     host: '10.40.253.187',
-    //     auth: '',
+    //     auth: '12345678',
     //     db: 12
     // }
-    redis: {
-        createClientFactory: function () {
-            return  new Redis.Cluster([{
-                port: 7000,
-                host: '121.42.190.222'
-            }, {
-                port: 7001,
-                host: '121.42.190.222'
-            }, {
-                port: 7002,
-                host: '121.42.190.222'
-            }, {
-                port: 7003,
-                host: '121.42.190.222'
-            }, {
-                port: 7004,
-                host: '121.42.190.222'
-            }, {
-                port: 7005,
-                host: '121.42.190.222'
-            }, {
-                port: 7006,
-                host: '121.42.190.222'
-            },{
-                port: 7007,
-                host: '121.42.190.222'
-            }]);
-        }
-    }
+
 
     //
-    // redis: {
-    //
-    //   createClientFactory: function () {
-    //         return new Redis({ port: 19000,          // Redis port
-    //             // host: "121.42.190.222",   // Redis host
-    //             host: "10.40.253.187",
-    //             // family: 4,           // 4 (IPv4) or 6 (IPv6)
-    //             // password: "",
-    //             db: 12
-    //         });
-    //     // return new Redis({ port: 7379,          // Redis port
-    //     //   host: "10.40.253.187",   // Redis host
-    //     //   family: 4,           // 4 (IPv4) or 6 (IPv6)
-    //     //   password: "12345678",
-    //     //   db: 12
-    //     // });
-    //   }
-    // }
+    redis: {
+
+      createClientFactory: function () {
+            // return new Redis({ port: 19000,          // Redis port
+            //     // host: "121.42.190.222",   // Redis host
+            //     host: "10.40.253.187",
+            //     // family: 4,           // 4 (IPv4) or 6 (IPv6)
+            //     // password: "",
+            //     db: 12
+            // });
+        return new Redis({ port: 7379,          // Redis port
+          host: "10.40.253.187",   // Redis host
+          family: 4,           // 4 (IPv4) or 6 (IPv6)
+          password: "12345678",
+          db: 12
+        });
+      }
+    }
 });
 
 
@@ -174,14 +146,15 @@ function create() {
 
     job.save();
     //
+    setTimeout( create, 100 | 0 );
     //  setTimeout( create, Math.random() * 2000 | 0 );
 }
 
-  // create();
+  create();
 
 // process video conversion jobs, 1 at a time.
 // jobs.process( 'test', 10, function ( job, done ) {})
-jobs.process( 'video conversion', 10, function ( job, done ) {
+jobs.process( 'video conversion', 1, function ( job, done ) {
     var frames = job.data.frames;
     function next( i ) {
         // pretend we are doing some work

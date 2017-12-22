@@ -1,6 +1,6 @@
 {
   "name": "kuejob",
-  "version": "0.11.9",
+  "version": "0.11.10",
   "description": "meteor kuejob",
   "main": "index.js",
   "scripts": {
