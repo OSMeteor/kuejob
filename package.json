@@ -42,7 +42,7 @@
     "nib": "~1.1.2",
     "node-redis-warlock": "~0.2.0",
     "pug": "^2.0.0-beta3",
-    "stylus": "~0.54.5",
+    "stylus": "~0.55.0",
     "yargs": "^4.0.0"
   },
   "devDependencies": {
