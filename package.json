@@ -40,7 +40,7 @@
     "ioredis": "^3.2.2",
     "lodash": "^4.0.0",
     "nib": "~1.1.2",
-    "node-redis-warlock": "~0.2.0",
+    "node-redis-warlock": "~1.0.0",
     "pug": "^2.0.0-beta3",
     "stylus": "~0.54.5",
     "yargs": "^4.0.0"
